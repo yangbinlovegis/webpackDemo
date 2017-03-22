@@ -1,0 +1,34 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "test demp",
+  "main": "index.js",
+  "scripts": {
+    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 8000 --inline",
+    "build": "node node_modules/webpack/bin/webpack.js -p --devtool hidden-module-source-map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangbinlovegis/webpackDemo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangbinlovegis/webpackDemo/issues"
+  },
+  "homepage": "https://github.com/yangbinlovegis/webpackDemo#readme",
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-react-jsx": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-2": "^6.22.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.3",
+    "redux": "^3.6.0",
+    "webpack": "^2.3.0",
+    "webpack-dev-server": "^2.4.2"  
+  }
+}
