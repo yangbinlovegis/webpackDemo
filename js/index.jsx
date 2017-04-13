@@ -4,6 +4,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers'
 import App from './container/App'
+import * as $ from 'jquery'
 
 const store = createStore(rootReducer);
 

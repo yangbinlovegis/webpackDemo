@@ -1,5 +1,6 @@
 import React,{ PropTypes,Component } from 'react'
 
+
 class Header extends React.Component {
 
     constructor(props) {
@@ -14,12 +15,12 @@ class Header extends React.Component {
     };
 
     handleClick() {
-        console.info('handleClick');
+        console.log('handleClick test');
     }
 
     render() {
         return(
-          <div>测试React test</div>
+          <div onClick={this.handleClick.bind(this)}>测试React test</div>
         )
     }
 }

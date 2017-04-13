@@ -6,7 +6,7 @@ module.exports = {
 
 	entry:['./js/index.jsx'],
 	output: {
-		filename:'bundle.js'
+        filename:'bundle.js'
 	},
 	plugins: [
         new webpack.optimize.UglifyJsPlugin({
