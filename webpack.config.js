@@ -2,9 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-	entry:['./js/index'],
+    devtool:'source-map',
+
+	entry:['./js/index.jsx'],
 	output: {
-		path: path.join(__dirname,'dist'),
 		filename:'bundle.js'
 	},
 	plugins: [
@@ -13,19 +14,27 @@ module.exports = {
         		warnings: false,
         	},
         }),
-        new webpack.optimize.OccurrenceOrderPlugin()
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': JSON.stringify('production')
+        }),
     ],
     module: {
-        loaders:[{
-            test: /\.jsx?$/,  
-            loader: 'babel-loader', // 'babel-loader' is also a legal name to reference  
-            query: {
-                presets: ['react', 'es2015']
+        loaders:[
+            {
+                test: /\.jsx|\.js$/,
+                loader: 'babel-loader', // 'babel-loader' is also a legal name to reference
+                query: {
+                    presets: ['react','es2015','stage-0'] //es2015必须放在stage-0后面，否则遇到react的class报错
+                }
+                //}
             }
-        }]  
-    	// loaders: [{
-    	// 	test: /\.css$/,
-    	// 	loaders: ['style', 'css','babel-loader','babel?presets=es2015']    
-    	// }]
+        ]
+    },
+    resolve: {
+        alias: {
+            'js': __dirname+'/js'
+        },
+        extensions: ['.js','.jsx'] //import 文件的时候默认省略后缀
     }
 }
